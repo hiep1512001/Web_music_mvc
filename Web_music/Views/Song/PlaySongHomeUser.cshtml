@@ -1,0 +1,141 @@
+﻿@model Web_music.Models.DisplaySong
+@{
+    Layout = null;
+    ViewBag.Title = "PlaySong";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="~/asset/user/base.css" rel="stylesheet" />
+    <link href="~/asset/user/style.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/8e44eaf2c8.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="https://www.invert.vn/media/ar/2-chi-pu.jpg" type="image/x-icon" />
+
+    <title>Music</title>
+</head>
+<body>
+    <div class="header ">
+        <div class="col-10">
+            <nav class=" navbar navbar-expand-lg">
+                <div class="folder-list_header collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- next, back button -->
+                    <!-- Login, register -->
+
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="main">
+            <div class="row">
+                <div class="menu-bar col-2">
+                    <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <div class="title-app">
+                            <p>Music Web</p>
+                        </div>
+                    </div>
+                    <!-- nemu bar -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/HomeUser/Index">
+                                <i class="fa-solid fa-house"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Search/IndexHomeUser">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/MyLibrary/Get">
+                                <i class="bi bi-music-note-list margin-top"></i>
+                                My library
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Home/LogOut">
+                                <i class="bi bi-box-arrow-left"></i>
+                                Log Out
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- container info -->
+                <div class="container__info col-10">
+
+                    <div class="header-info ">
+                        <img src="/@Model.song.PICTURE_SONG">
+                        <p class="header-info__name">@Model.Name_Singer</p>
+
+                    </div>
+
+                    <div class="container__info-list">
+                        <div class="list">
+                            <!-- note -->
+                            <div class="note-item">
+                                <div class="list__title">
+                                    <p class="text-note-list">TITLE</p>
+                                </div>
+                                <div class="list__album">
+                                    <p class="text-note-list">SINGER</p>
+                                </div>
+                                <div class="list__album">
+                                    <p class="text-note-list">ALBUM</p>
+                                </div>
+                                <div class="list__album">
+                                    <p class="text-note-list"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- list song -->
+                        <div class="note-item">
+                            <div class="list__title">
+                                <p class="text-note-list">@Model.song.NAME_SONG</p>
+                            </div>
+                            <div class="list__album">
+                                <p class="text-note-list">@Model.Name_Singer</p>
+                            </div>
+                            <div class="list__album">
+                                <p class="text-note-list">@Model.Name_ALbum</p>
+                            </div>
+                            <div class="list__album">
+                                <a href='~/MyLibrary/Add?id=@Model.song.ID_SONG'
+                                class="btn btn-primary btn-lg active btnUpdate" role="button" aria-pressed="true">Add My Library</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <audio src="getFileSong.jsp?id=${song.id}" type="audio/mp3" controls></audio> -->
+    <div class="footer">
+        <audio src="/@Model.song.PATH_SONG" type="audio/mp3" style="margin-left: 25%;
+    width: 50%;" controls autoplay="autoplay"></audio>
+    </div>
+    <script src="js/users.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>

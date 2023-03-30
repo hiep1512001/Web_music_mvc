@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Web_musicModelStoreContainer" CdmEntityContainer="Web_musicEntities">
+    <EntitySetMapping Name="ALBUMs">
+      <EntityTypeMapping TypeName="Web_musicModel.ALBUM">
+        <MappingFragment StoreEntitySet="ALBUM">
+          <ScalarProperty Name="ID_ALBUM" ColumnName="ID_ALBUM" />
+          <ScalarProperty Name="NAME_ALBUM" ColumnName="NAME_ALBUM" />
+          <ScalarProperty Name="ID_SINGER" ColumnName="ID_SINGER" />
+          <ScalarProperty Name="ID_GENRE" ColumnName="ID_GENRE" />
+          <ScalarProperty Name="PICTURE_ALBUM" ColumnName="PICTURE_ALBUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GENRES">
+      <EntityTypeMapping TypeName="Web_musicModel.GENRE">
+        <MappingFragment StoreEntitySet="GENRES">
+          <ScalarProperty Name="ID_GENRE" ColumnName="ID_GENRE" />
+          <ScalarProperty Name="NAME_GENRE" ColumnName="NAME_GENRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SINGERs">
+      <EntityTypeMapping TypeName="Web_musicModel.SINGER">
+        <MappingFragment StoreEntitySet="SINGER">
+          <ScalarProperty Name="ID_SINGER" ColumnName="ID_SINGER" />
+          <ScalarProperty Name="NAME_SINGER" ColumnName="NAME_SINGER" />
+          <ScalarProperty Name="PICTURE_SINGER" ColumnName="PICTURE_SINGER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SONGs">
+      <EntityTypeMapping TypeName="Web_musicModel.SONG">
+        <MappingFragment StoreEntitySet="SONG">
+          <ScalarProperty Name="ID_SONG" ColumnName="ID_SONG" />
+          <ScalarProperty Name="ID_SINGER" ColumnName="ID_SINGER" />
+          <ScalarProperty Name="ID_ALBUM" ColumnName="ID_ALBUM" />
+          <ScalarProperty Name="ID_GENRE" ColumnName="ID_GENRE" />
+          <ScalarProperty Name="NAME_SONG" ColumnName="NAME_SONG" />
+          <ScalarProperty Name="PATH_SONG" ColumnName="PATH_SONG" />
+          <ScalarProperty Name="PICTURE_SONG" ColumnName="PICTURE_SONG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="Web_musicModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="NAME_USER" ColumnName="NAME_USER" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="AVARTAR" ColumnName="AVARTAR" />
+          <ScalarProperty Name="decentralization" ColumnName="decentralization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MYLIBRARY" TypeName="Web_musicModel.MYLIBRARY" StoreEntitySet="MYLIBRARY">
+      <EndProperty Name="USERS">
+        <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+      </EndProperty>
+      <EndProperty Name="SONG">
+        <ScalarProperty Name="ID_SONG" ColumnName="ID_SONG" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
